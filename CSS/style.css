@@ -1,0 +1,30 @@
+.align-center {
+    text-align: center;
+    color:white;
+}
+
+.QRcodeGEN{
+    background-color: rgb(52, 52, 52);
+}
+
+.QRcodeGEN-subtitle{
+    color:white;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+.python-code{
+    color: white;
+    background-color: black;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.Hello{
+    text-align: center;
+}
+
+.copy-button
+{
+    margin-left: 15px;
+}

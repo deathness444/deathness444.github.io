@@ -1,7 +1,66 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <title>SaiharaRei's code</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+    </head>
     <body>
-        <h1>Hello World, it is a page to show my program written by ChatGPT!!</h1>
-        <p>Here is some example for you:</p>
+        <h1 class="Hello">Hello World, it is a page to show my program written by ChatGPT!!</h1>
+
+        <div class="QRcodeGEN">
+            
+            <h2 class="QRcodeGEN-subtitle">QR code genertaor (python):</h2>
+
+            <pre class="python-code" id="code-block-1">
+<code>import qrcode
+from PIL import Image
+
+# 製造 QR Code
+data = "https://www.pixiv.net/users/26058726"
+qr = qrcode.QRCode(version=1, box_size=10, border=5)
+qr.add_data(data)
+qr.make(fit=True)
+qr_img = qr.make_image(fill_color="black", back_color="white")
+
+# 載入圖示
+icon_path = "pixiv.png"
+icon = Image.open(icon_path)
+
+# 調整圖示大小
+icon_size = (qr_img.size[0] // 4, qr_img.size[1] // 4)
+icon.thumbnail(icon_size)
+
+# 在 QR Code 上加上圖示
+pos = ((qr_img.size[0] - icon.size[0]) // 2, (qr_img.size[1] - icon.size[1]) // 2)
+qr_with_icon = qr_img.copy()
+qr_with_icon.paste(icon, pos)
+
+# 儲存 QR Code 到電腦中
+qr_with_icon.save("qrcode_with_icon.png")</code>
+            </pre>
+            <button class="copy-button" data-target="code-block-1">Copy</button>
+
+            <!-- <pre class="python-code" id="code-block-2">
+                <code>print("Hello")
+                </code>
+            </pre>
+            <button class="copy-button" data-target="code-block-2">Copy</button> -->
+
+            <script src="javascript/copyBtn.js"></script>
+    
+            <div class="align-center">
+                <h2>Step1:Replace link in the "data".</h2>
+                <img src="imgQR/QRcodeGEN1.png" alt="" height="300">
+                <h2>Step2:And a pixiv icon for example……</h2>
+                <img src="imgQR/pixiv.png" alt="" width="300" height="300">
+                <h2>Output:</h2>
+                <img src="imgQR/qrcode_with_icon.png" alt="" width="300" height="300">
+            </div>
+
+        </div>
+
     </body>
 </html>
